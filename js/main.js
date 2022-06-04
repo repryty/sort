@@ -15,9 +15,9 @@ function btn1(){
     } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="selection"){
         document.getElementById("text2").value = (selection(text1)).split(" ").reverse().join(" ");
     } else if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="insert"){
-        document.getElementById("text2").value = selection(text1)
+        document.getElementById("text2").value = insert(text1)
     } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="insert"){
-        document.getElementById("text2").value = (selection(text1)).split(" ").reverse().join(" ");
+        document.getElementById("text2").value = (insert(text1)).split(" ").reverse().join(" ");
     }
     
 }
@@ -56,6 +56,27 @@ function selection(text){
         temp=data[i];
         data[i]=data[least];
         data[least]=temp;
+    }
+    result="";
+    for(var i = 0; i<text.split(" ").length; i++){
+        result=result+data[i]+" ";
+    }
+    return result;
+}
+
+function insert(text){
+    const how=text.split(" ").length;
+    var data=text.split(" "), temp, j;
+    for(var i = 1; i<=how-1; i++){
+        temp = data[i];
+        for(j=i-1; j>=0; j--){
+            if(temp<data[j]){
+                data[j+1] = data[j]
+            }else{
+                break;
+            }
+        }
+        data[j+1]=temp;
     }
     result="";
     for(var i = 0; i<text.split(" ").length; i++){
