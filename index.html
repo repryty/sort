@@ -3,9 +3,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index1.css">
+    <script src="js/main.js"></script>
     <title>Sort</title>
 </head>
 <body>
-    
+    <div id="title1">SORT</div>
+    <div id="form1">
+        <input type="text" id="text1">
+        <select name="howtosort" id="sort1">
+            <option value="bubble">버블 정렬</option>
+            <option value="selection">선택 정렬</option>
+            <option value="insert">삽입 정렬</option>
+        </select>
+        <select name="way" id="sort2">
+            <option value="up">오름차순</option>
+            <option value="down">내림차순</option>
+        </select>
+        <button onclick="btn1();">정렬</button>
+        
+        </br>
+        <input type="text" disabled id="text2">
+        <br>
+        <span id="dummy1"></span>
+    </div>
 </body>
 </html>

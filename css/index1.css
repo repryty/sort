@@ -1,0 +1,32 @@
+#title1{
+    font-size: 30pt;
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#form1{
+    font-size: 30pt;
+    font-weight: bold;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#text2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#dummy1{
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: normal;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    line-break: none;
+    width: 100%;
+}
