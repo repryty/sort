@@ -6,18 +6,36 @@ function btn1(){
     document.getElementById("dummy1").innerHTML =  `정렬 방법: ${howtosort}<br>정렬 순서: ${target2.options[target2.selectedIndex].text}`;
 
 
-    if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="bubble"){
-        document.getElementById("text2").value = bubble(text1);
-    } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="bubble"){
-        document.getElementById("text2").value = (bubble(text1)).split(" ").reverse().join(" ");
-    } else if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="selection"){
-        document.getElementById("text2").value = selection(text1)
-    } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="selection"){
-        document.getElementById("text2").value = (selection(text1)).split(" ").reverse().join(" ");
-    } else if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="insert"){
-        document.getElementById("text2").value = insert(text1)
-    } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="insert"){
-        document.getElementById("text2").value = (insert(text1)).split(" ").reverse().join(" ");
+    // if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="bubble"){
+    //     document.getElementById("text2").value = bubble(text1);
+    // } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="bubble"){
+    //     document.getElementById("text2").value = (bubble(text1)).split(" ").reverse().join(" ");
+    // } else if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="selection"){
+    //     document.getElementById("text2").value = selection(text1)
+    // } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="selection"){
+    //     document.getElementById("text2").value = (selection(text1)).split(" ").reverse().join(" ");
+    // } else if(target2.options[target2.selectedIndex].value=="up"&&target1.options[target1.selectedIndex].value=="insert"){
+    //     document.getElementById("text2").value = insert(text1)
+    // } else if(target2.options[target2.selectedIndex].value=="down"&&target1.options[target1.selectedIndex].value=="insert"){
+    //     document.getElementById("text2").value = (insert(text1)).split(" ").reverse().join(" ");
+    // }
+
+    if(target2.options[target2.selectedIndex].value=="up"){
+        if(target1.options[target1.selectedIndex].value=="bubble"){
+            document.getElementById("text2").value = bubble(text1);
+        } else if(target1.options[target1.selectedIndex].value=="selection"){
+            document.getElementById("text2").value = selection(text1)
+        } else{ //insert
+            document.getElementById("text2").value = insert(text1)
+        }
+    } else {
+        if(target1.options[target1.selectedIndex].value=="bubble"){
+            document.getElementById("text2").value = (bubble(text1)).reverse();
+        } else if(target1.options[target1.selectedIndex].value=="selection"){
+            document.getElementById("text2").value = (selection(text1)).reverse();
+        } else{ //insert
+            document.getElementById("text2").value = (insert(text1)).reverse();
+        }
     }
     
 }
